@@ -1,0 +1,28 @@
+
+Showing logs for build [32mmeta-abayer-uppercase-org-envir-4gzff-2[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-2bjvk[0m
+{"level":"warn","ts":1578594021.2409737,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578594021.2414804,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-abayer-uppercase-org-envir-4gzff-2[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-xwwfs[0m
+{"level":"warn","ts":1578594022.6642194,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1578594022.6655526,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmeta-abayer-uppercase-org-envir-4gzff-2[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-abayer-uppercase-org-envir-4gzff-2[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-abayer-uppercase-org-envir-77ds4[0m
+{"level":"warn","ts":1578594027.8009598,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578594029.042885,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-dev.git @ de486d0db498aad607c62039e5eac16b17be940d in path /workspace/source"}
+
+Showing logs for build [32mmeta-abayer-uppercase-org-envir-4gzff-2[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:de486d0db498aad607c62039e5eac16b17be940d,10:57967d8c788597d9936239c472ef446cbc056916
+DEBUG: ran git fetch --unshallow origin 57967d8c788597d9936239c472ef446cbc056916: de486d0db498aad607c62039e5eac16b17be940d: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard de486d0db498aad607c62039e5eac16b17be940d in 
+DEBUG: ran clean --force -d . in 
+error: error during merge: merging 57967d8c788597d9936239c472ef446cbc056916 into master: git output: Auto-merging env/requirements.yaml
+CONFLICT (content): Merge conflict in env/requirements.yaml
+Automatic merge failed; fix conflicts and then commit the result.: failed to run 'git merge 57967d8c788597d9936239c472ef446cbc056916' command in directory '', output: 'Auto-merging env/requirements.yaml
+CONFLICT (content): Merge conflict in env/requirements.yaml
+Automatic merge failed; fix conflicts and then commit the result.'
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-git-merge'. The execution of the pipeline has stopped.[0m
