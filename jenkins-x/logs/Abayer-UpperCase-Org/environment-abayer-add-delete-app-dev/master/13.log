@@ -1,0 +1,151 @@
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-credential-initializer-rl7ps[0m
+{"level":"warn","ts":1578670000.2045248,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578670000.2050982,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-hmbzj[0m
+{"level":"warn","ts":1578670001.606162,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1578670001.608008,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-git-source-abayer-uppercase-org-environmen-6crgx[0m
+{"level":"warn","ts":1578670014.7888072,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578670015.9156058,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-dev.git @ v0.0.13 in path /workspace/source"}
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:262ae166e7f85c676dd4c59227ef2e2885b27f92
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+Locking version stream https://github.com/jenkins-x/jenkins-x-versions.git to release v1.0.293. Jenkins X will use this release rather than 1a788aacb9def7f4e0c6a1b47b90a273516ffffd to resolve all versions from now on.
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 104.155.28.59.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+using version 2.0.1116 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.1116
+Kubernetes cluster v1.13.11-gke.14
+kubectl            v1.17.0
+helm client        Client: v2.14.3+g0e7f3b6
+git                2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Validating Kaniko secret in namespace **
+
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 13
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 13
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-915300756/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 13
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+Waiting to find the external host name of the ingress controller Service in namespace kube-system with name **ing-nginx-ingress-controller
+No domain flag provided so using default 104.155.28.59.nip.io to generate Ingress rules
+defaulting the domain to 104.155.28.59.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 13
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 13
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 13
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-274043036/acme/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name ******-add-delete-app found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ****** [Automatically accepted existing value]
+Pipeline bot Git email address andrew.bayer@gmail.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-create-jx-auth-config[0m
+Saved the rendered configuration into templates/**-auth-configmap.yaml file
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-jx-auth-config[0m
+Modified file /workspace/source/systems/**-auth/Chart.yaml to set the chart to version 13
+Ignoring templates/**-auth-configmap.yaml
+No requirements file: /tmp/**-helm-apply-193276446/**-auth/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mabayer-uppercase-org-environmen-kqmzt-13[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 13
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+error: failed to build the dependencies of chart '/tmp/**-helm-apply-771972257/env': failed to run 'helm dependency build' command in directory '/tmp/**-helm-apply-771972257/env', output: 'Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "charts.jetstack.io" chart repository
+...Successfully got an update from the "charts.bitnami.com" chart repository
+...Successfully got an update from the "chartmuseum.jenkins-x.io" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete.
+Error: Can't get a valid version for repositories **-app-sso. Try changing the version constraint in requirements.yaml'
+[31m
+Pipeline failed on stage 'release' : container 'step-install-jenkins-x'. The execution of the pipeline has stopped.[0m
